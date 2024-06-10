@@ -1,0 +1,327 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+
+  
+  <style>
+    /* Your existing CSS styles */
+    .product-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .product-section {
+        background: #f9f9f9;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 40px;
+        color: rgba(240, 9, 9, 0.879);
+    }
+
+    .product-title {
+        color: #007bff;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .product-content {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 20px 0;
+    }
+
+    .product-item {
+        flex: 0 0 auto;
+        margin-right: 20px;
+        text-align: center;
+        transition: transform 0.3s;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        background: #fff;
+    }
+
+    .product-item img {
+        width: 100%;
+        height: 700px; /* Adjust this value to the desired height */
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .product-item h3 {
+        margin: 20px 0 10px;
+        font-size: 20px;
+        color: #333;
+    }
+
+    .product-item p {
+        margin-bottom: 20px;
+        color: #777;
+        font-size: 16px;
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        color: black;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 20px;
+        z-index: 1;
+        border-radius: 50%;
+        border: 2px solid #007bff;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .prev:hover,
+    .next:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .prev {
+        left: 20px;
+    }
+
+    .next {
+        right: 20px;
+    }
+
+    .product-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-icons {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-icons i {
+        margin: 0 5px;
+        font-size: 20px;
+        color: #555;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .product-icons i:hover {
+        color: #007bff;
+    }
+
+    .product-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        .prev,
+        .next {
+            display: none;
+        }
+    }
+
+    /* Spinner styles */
+    .spinner-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .spinner {
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid #3498db;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+     /* <!--why cirbrid section open--> */
+.about-section {
+    
+    border-radius: 20px;
+    padding: 50px 30px; /* Adjust padding as needed */
+    box-shadow: 0 15px 30px rgb(255, 228, 228), 0 5px 15px rgb(219, 215, 215);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+/* Overlay style */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* Image style */
+.about-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgb(238, 232, 232);
+    transition: transform 0.3s ease-in-out;
+    margin-left: 10%;
+}
+
+/* Text style */
+.about-text {
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    
+}
+
+/* Title style */
+.about-title {
+    color: #000000; /* White text color */
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+/* Subtitle style */
+
+
+/* Description style */
+.about-description {
+    color: #000000; /* Lighter text color */
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+
+
+/* <!--why cirbrid section closed--> */
+
+
+  </style>
+</head>
+<body>
+    <div style="height: 25PX;width: 100%;background: rgb(166, 210, 214);"></div>
+  {% include 'polls/header.html' %}
+  {% include 'polls/Slider.html' %}
+
+  <!-- Spinner code -->
+  <div class="spinner-container" id="spinnerContainer">
+    <div class="spinner"></div>
+  </div>
+  
+  <!-- Product sliding images -->
+  <!-- <div class="product-wrapper">
+    <div class="product-section">
+        <h2 class="product-title">Our Products</h2>
+        <div class="product-content">
+            <div class="product-carousel">
+                {% for product in products %}
+                <div class="product-item">
+                  <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                  <h3>{{ product.name }}</h3>
+                  <p>{{ product.info }}</p>
+                  <p>Rs {{ product.price }}</p>
+                  
+            
+              </div>
+                {% endfor %}
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+         
+          <button class="btn btn-primary" type="button">
+          <a href="{% url 'gallery' %}" style="color: white;text-decoration: none;">  See All the Product </a>
+        </button>
+        </div>
+    </div>
+  </div> -->
+  
+
+<!--why cirbrid section open-->
+
+  <div class="container mt-5 about-section">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <!-- Replace this image with an image related to your why cirbrid -->
+            <img src="{% static 'img/back.jpg' %}" alt="Vision and Mission Image" class="about-image">
+        </div>
+        <div class="col-md-6 about-text">
+            <!-- Replace these titles with your vision and mission -->
+            <h2 class="about-title">WHY CIRBRID</h2>
+            <p class="about-description">We are Expertise in Becoming one of the Global Leaders in <br> "Electrical Energy Efficiency" by providing sustainable, dependable,<br> and efficient energy usage, making energy management more convenient <br> and intelligent for the Global Market.</p>
+        </div>
+    </div>
+    <div class="overlay"></div> <!-- Add overlay for better text readability -->
+</div>
+
+
+<!--why cirbrid section closed-->
+
+  
+  {% include 'polls/Testimonial.html' %}   
+
+
+
+  
+
+  {% include 'polls/client.html' %}
+  {% include 'polls/Footer.html' %}
+
+  <!-- Bootstrap JS -->
+  <script>
+    window.addEventListener('load', function() {
+      var spinnerContainer = document.getElementById('spinnerContainer');
+      if (spinnerContainer) {
+        spinnerContainer.style.display = 'none';
+      }
+    });
+
+
+  </script>
+
+</body>
+</html>

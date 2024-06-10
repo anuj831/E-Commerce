@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        /* General Styles */
+        body {
+            background: #f8f9fa;
+            font-family: 'Open Sans', sans-serif;
+            
+        }
+
+        /* Product Item Styles */
+        .item {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 5px;
+            border-radius: 10px; /* Add border radius for a card effect */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .item:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .item .category {
+           
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .item .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .item .price {
+            font-size: 16px;
+            font-weight: bold;
+        
+            margin-bottom: 15px;
+        }
+
+        .item .btn-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .product_meta a, .pro-price{
+    color:#fc5959 ;
+}
+
+.pro-price, .amount-old {
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.amount-old {
+    text-decoration: line-through;
+}
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .item {
+                padding: 15px;
+            }
+        }
+
+        /* Add spacing between cards */
+        @media (min-width: 768px) {
+            .item {
+                margin-right: 0; /* Remove right margin */
+                margin-bottom: 20px; /* Add bottom margin */
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    {% include 'polls/header.html' %}
+    <br>
+    <div class="container">
+        <div id="products" class="row">
+            
+            <div class="item col-md-3">
+                <a href="{% url 'description' %}" style="color: black;text-decoration: none;">
+                <img src="http://res.cloudinary.com/dnhwxgf8i/image/upload/c_scale,h_250,w_400/v1488011915/mockup3_kxxwfy.jpg" alt="" />
+                <div class="category">
+                    Tables
+                </div>
+                <div class="title">
+                    Pearl Galaxy
+                </div>
+                <div class="m-bot15 price"> <strong>Price : </strong> <span class="amount-old">$544</span>  <span class="pro-price"> $300.00</span></div>
+              
+            </a>
+            </div>
+            <div class="item col-md-3">
+                <img src="http://res.cloudinary.com/dnhwxgf8i/image/upload/c_scale,h_250,w_400/v1488011915/mockup3_kxxwfy.jpg" alt="" />
+                <div class="category">
+                    Tables
+                </div>
+                <div class="title">
+                    Pearl Galaxy
+                </div>
+                <div class="price">
+                    $2,100
+                </div>
+               
+            </div>
+            <div class="item col-md-3">
+                <img src="http://res.cloudinary.com/dnhwxgf8i/image/upload/c_scale,h_250,w_400/v1488011915/mockup3_kxxwfy.jpg" alt="" />
+                <div class="category">
+                    Tables
+                </div>
+                <div class="title">
+                    Pearl Galaxy
+                </div>
+                <div class="price">
+                    $2,100
+                </div>
+               
+            </div>
+            <div class="item col-md-3">
+                <img src="http://res.cloudinary.com/dnhwxgf8i/image/upload/c_scale,h_250,w_400/v1488011915/mockup3_kxxwfy.jpg" alt="" />
+                <div class="category">
+                    Tables
+                </div>
+                <div class="title">
+                    Pearl Galaxy
+                </div>
+                <div class="price">
+                    $2,100
+                </div>
+               
+            </div>
+            
+        
+         
+           
+            <!-- Add more product items here -->
+        </div>
+    </div>
+    <br> <br> <br> <br> <br> <br> <br> <br>  <br>
+    {% include 'polls/Footer.html' %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#list').click(function(event){
+                event.preventDefault();
+                $('#products .item').addClass('col-md-12');
+            });
+            $('#grid').click(function(event){
+                event.preventDefault();
+                $('#products .item').removeClass('col-md-12');
+                $('#products .item').addClass('col-md-3');
+            });
+        });
+    </script>
+</body>
+</html>

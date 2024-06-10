@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    
+    <style>
+        /* Custom styles for the form */
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        .panel-info > .panel-heading {
+            background: linear-gradient(to bottom, #555 0px, #888 100%);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .panel-body {
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-control {
+            border-radius: 0;
+        }
+        .btn-submit-fix {
+            border-radius: 0;
+            width: 100%;
+        }
+        .cards {
+            list-style: none;
+            padding-left: 0;
+            text-align: center;
+        }
+        .cards li {
+            display: inline-block;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .cards li:hover {
+            transform: translateY(-5px);
+        }
+        .visa, .mastercard, .amex {
+            width: 50px;
+            height: 32px;
+            background-size: contain;
+        }
+        .visa {
+            background-image: url('https://img.icons8.com/color/48/000000/visa.png');
+        }
+        .mastercard {
+            background-image: url('https://img.icons8.com/color/48/000000/mastercard-logo.png');
+        }
+        .amex {
+            background-image: url('https://img.icons8.com/offices/40/000000/amex.png');
+        }
+        /* Additional styles for new payment options */
+        .payment-options {
+            margin-top: 20px;
+        }
+        .payment-options h4 {
+            text-align: center;
+            margin-top: 0;
+        }
+        .payment-options ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        .payment-options ul li {
+            display: inline-block;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .payment-options ul li:hover {
+            transform: translateY(-5px);
+        }
+        .neft, .upi {
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .neft {
+            background-image: url('https://img.icons8.com/plasticine/100/000000/bank-building.png');
+        }
+        .upi {
+            background-image: url('https://img.icons8.com/color/48/000000/google-pay.png');
+        }
+    </style>
+</head>
+<body>
+    {% include 'polls/header.html' %}
+    <div class="container">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3><i class="glyphicon glyphicon-lock"></i> Secure Payment</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" method="post" action="">
+                    <div class="form-group">
+                        <label class="col-md-12 control-label" for="CreditCardType">Payment Method:</label>
+                        <div class="col-md-12">
+                            <select id="CreditCardType" name="CreditCardType" class="form-control">
+                                <option value="1">Credit Card</option>
+                                <option value="2">Debit Card</option>
+                                <option value="3">Net Banking</option>
+                                <option value="4">UPI</option>
+                            </select>
+                        </div>
+                    </div> &nbsp;
+                    <div class="form-group">
+                        <label class="col-md-12 control-label" for="car_number">Card Number / UPI ID:</label>
+                        <div class="col-md-12"><input type="text" class="form-control" name="car_number" placeholder="Enter Card Number or UPI ID" /></div>
+                    </div> &nbsp;
+                    <div class="form-group">
+                        <label class="col-md-12 control-label" for="car_code">CVV (if applicable):</label>
+                        <div class="col-md-12"><input type="text" class="form-control" name="car_code" placeholder="Enter CVV" /></div>
+                    </div> &nbsp;
+                    <div class="form-group">
+                        <label class="col-md-12 control-label">Expiration Date (if applicable):</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control" name="">
+                                <option value="">Month</option>
+                                <option value="01">January</option>
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div> &nbsp;
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control" name="">
+                                <option value="">Year</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <span>Pay secure using your preferred method:</span>
+                        </div>
+                        <div class="col-md-12">
+                            <ul class="cards">
+                                <li class="visa"></li>
+                                <li class="mastercard"></li>
+                                <li class="amex"></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- Payment Options -->
+                    <div class="payment-options">
+                        <h4>Other Payment Options</h4>
+                        <ul>
+                            <li class="neft"></li>
+                            <li class="upi"></li>
+                            <!-- Add more payment options as needed -->
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <button class="btn btn-primary" type="button">Pay Now</button> 
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'polls/Footer.html' %}
+</body>
+</html>

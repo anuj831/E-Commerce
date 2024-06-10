@@ -1,0 +1,271 @@
+{% load static %}
+
+<!-- Your custom CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+<style>
+    .carousel-item {
+      height: 60vh; /* Adjusts the height to 50% of the viewport height */
+    }
+    .carousel-item .img {
+      object-fit: cover;
+      height: 100%; /* Ensures the image covers the entire carousel item */
+      width: 100%;  /* Ensures the image covers the entire width */
+    }
+
+  @media (max-width: 768px) {
+    .carousel-caption {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+      height: auto;
+
+      max-width: 90%;
+    }
+    .carousel-caption > div {
+      width: 100%;
+      height: auto;
+    }
+    .carousel-caption .left-container,
+    .carousel-caption .right-container {
+      flex: none;
+      width: 100%;
+      margin-left: 0;
+      height: auto;
+    }
+   
+    .carousel-caption .right-container h4,
+    .carousel-caption .right-container p {
+      text-align: left;
+    }
+  }
+
+  </style>
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'img/cirbrid.jpg' %}" class="d-block w-100 img" alt="..."/>
+      <div class="carousel-caption" style="
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+     
+      height: 150px; /* Define a height for the container */
+      width: 100%;
+      max-width: 430px;
+      margin-left: auto;
+     
+     background: rgba(97, 112, 184, 0.846);
+    ">
+  <div style="display: flex; width: 100%; height: 100%;">
+    <!-- Left Container -->
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; background-color: white; height: 100%; margin-left: -20px; height: 137%; margin-top: -20px; ">
+      <span style="font-size: 22px; font-weight: bold; color: rgba(97, 112, 184, 0.846);">PROBRID</span>
+    </div>
+    <!-- Right Container -->
+    <div style="flex: 2; display: flex; flex-direction: column; justify-content: center; padding: 0 10px; height: 100%;">
+      <h5 class="text-uppercase font-weight-bold text-center" style="color: white; margin-bottom: 10px;">
+         Innovative Technology
+      </h5>
+     
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <div class="carousel-item">
+      <img src="{% static 'img/charbrid.jpg' %}" class="d-block w-100 img" alt="..." style="object-fit: cover; height: 100%;" />
+      <div class="carousel-caption" style="
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+ 
+      height: 150px; /* Define a height for the container */
+      width: 100%;
+      max-width: 430px;
+      margin-left: auto;
+     
+     background: rgb(228, 213, 76);
+    ">
+  <div style="display: flex; width: 100%; height: 100%;">
+    <!-- Left Container -->
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; background-color: white; height: 100%; margin-left: -20px; height: 137%; margin-top: -20px; ">
+      <span style="font-size: 22px; font-weight: bold; color: rgb(228, 213, 76);">CHARBRID</span>
+    </div>
+    <!-- Right Container -->
+    <div style="flex: 2; display: flex; flex-direction: column; justify-content: center; padding: 0 10px; height: 100%;">
+      <h5 class="text-uppercase font-weight-bold text-center" style="color: white; margin-bottom: 10px;">
+         e Mobility Charging Solution
+      </h5>
+     
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/mbrid.jpg' %}" class="d-block w-100 img" alt="..." style="object-fit: cover; height: 100%;" />
+      <div class="carousel-caption" style="
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+ 
+      height: 150px; /* Define a height for the container */
+      width: 100%;
+      max-width: 430px;
+      margin-left: auto;
+     
+     background: rgba(216, 62, 62, 0.705);
+    ">
+  <div style="display: flex; width: 100%; height: 100%;">
+    <!-- Left Container -->
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; background-color: white; height: 100%; margin-left: -20px; height: 137%; margin-top: -20px; ">
+      <span style="font-size: 22px; font-weight: bold; color: rgb(161, 47, 47);">MBRID</span>
+    </div>
+    <!-- Right Container -->
+    <div style="flex: 2; display: flex; flex-direction: column; justify-content: center; padding: 0 10px; height: 100%;">
+      <h5 class="text-uppercase font-weight-bold text-center" style="color: white; margin-bottom: 10px;">
+         Measuring Solution
+      </h5>
+     
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/cet.jpg' %}" class="d-block w-100 img" alt="..." style="object-fit: cover; height: 100%;" />
+      <div class="carousel-caption" style="
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+  
+      height: 150px; /* Define a height for the container */
+      width: 100%;
+      max-width: 430px;
+      margin-left: auto;
+   
+     background: rgb(51, 188, 206);
+    ">
+  <div style="display: flex; width: 100%; height: 100%;">
+    <!-- Left Container -->
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; background-color: white; height: 100%; margin-left: -20px; height: 137%; margin-top: -20px; ">
+      <span style="font-size: 22px; font-weight: bold; color: rgb(51, 188, 206);">SKYBRID</span>
+    </div>
+    <!-- Right Container -->
+    <div style="flex: 2; display: flex; flex-direction: column; justify-content: center; padding: 0 10px; height: 100%;">
+      <h5 class="font-weight-bold text-center" style="color: white; margin-bottom: 10px;">
+         e3 IOT Solution
+      </h5>
+     
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/sunbrid.jpg' %}" class="d-block w-100 img" alt="..." style="object-fit: cover; height: 100%;" />
+      <div class="carousel-caption" style="
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+
+      height: 150px; /* Define a height for the container */
+      width: 100%;
+      max-width: 430px;
+      margin-left: auto;
+    
+     background: rgb(112, 197, 123);
+    ">
+  <div style="display: flex; width: 100%; height: 100%;">
+    <!-- Left Container -->
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; background-color: white; height: 100%; margin-left: -20px; height: 137%; margin-top: -20px; ">
+      <span style="font-size: 22px; font-weight: bold; color: rgb(112, 197, 123);">SUNBRID</span>
+    </div>
+    <!-- Right Container -->
+    <div style="flex: 2; display: flex; flex-direction: column; justify-content: center; padding: 0 10px; height: 100%;">
+      <h5 class="text-uppercase font-weight-bold text-center" style="color: white; margin-bottom: 10px;">
+          Renewal Solution
+      </h5>
+     
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/harmbrid.jpeg' %}" class="d-block w-100 img" alt="..." style="object-fit: cover; height: 100%;" />
+      <div class="carousel-caption" style="
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+  
+      height: 150px; /* Define a height for the container */
+      width: 100%;
+      max-width: 430px;
+      margin-left: auto;
+      
+     background: rgb(42, 133, 185);
+    ">
+  <div style="display: flex; width: 100%; height: 100%;">
+    <!-- Left Container -->
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; background-color: white; height: 100%; margin-left: -20px; height: 137%; margin-top: -20px; ">
+      <span style="font-size: 22px; font-weight: bold; color: rgb(42, 133, 185);">HARMBRID </span>
+    </div>
+    <!-- Right Container -->
+    <div style="flex: 2; display: flex; flex-direction: column; justify-content: center; padding: 0 10px; height: 100%;">
+      <h5 class="text-uppercase font-weight-bold text-center" style="color: white; margin-bottom: 10px;">
+        Reactive Filtering Solution
+      </h5>
+     
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Bootstrap JS -->
+
+

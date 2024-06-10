@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+
+        .statistics-section {
+            background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Gradient background */
+            border-radius: 20px; /* Rounded corners */
+            padding: 40px;
+            text-align: center;
+            margin: 50px auto; /* Centering horizontally */
+            max-width: 90%; /* Adjust as needed */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Box shadow */
+            box-sizing: border-box;
+        }
+
+        .statistics-content {
+            margin-bottom: 40px;
+        }
+
+        .statistics-content h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .statistics-data {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .statistics-item {
+            flex: 1;
+            padding: 30px;
+            margin: 10px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-sizing: border-box;
+            min-width: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .statistics-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 20px;
+        }
+
+       
+
+        .statistics-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .statistics-item span {
+            font-size: 48px;
+            font-weight: bold;
+            color: #007bff; /* Blue color */
+            display: block;
+            margin-bottom: 10px;
+            position: relative;
+            animation: countUp 2s ease-in-out forwards;
+        }
+
+        .statistics-item p {
+            font-size: 20px;
+            color: #555;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .statistics-item i {
+            font-size: 24px;
+            color: #007bff;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: transform 0.3s;
+        }
+
+        .statistics-item:hover i {
+            transform: translate(-50%, -10px);
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .statistics-item {
+                flex-basis: calc(50% - 20px);
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .statistics-item {
+                flex-basis: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="statistics-section">
+        <div class="statistics-content">
+            <h2>Leading Distributor in the Global Electric Mobility Market</h2>
+            <div class="statistics-data">
+                <div class="statistics-item">
+                    <span id="countries">0</span>
+                    <p>Countries</p>
+                    <a href="#"><i class="fa fa-globe"></i></a>
+                </div>
+                <div class="statistics-item">
+                    <span id="clients">0</span>
+                    <p>Clients - All Over the World</p>
+                    <a href="#"><i class="fa fa-users"></i></a>
+                </div>
+                <div class="statistics-item">
+                    <span id="products">0</span>
+                    <p>Number of Products</p>
+                    <a href="#"><i class="fa fa-cube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Animated number counting
+            const animateNumber = (element, target) => {
+                let current = 0;
+                const step = Math.ceil(target / 100);
+                const increment = () => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(interval);
+                    }
+                    element.textContent = '+' + current.toLocaleString();
+                };
+                const interval = setInterval(increment, 20);
+            };
+
+            // Set the target numbers and animate
+            const countriesSpan = document.getElementById('countries');
+            const clientsSpan = document.getElementById('clients');
+            const productsSpan = document.getElementById('products');
+            animateNumber(countriesSpan, 100);
+            animateNumber(clientsSpan, 16500);
+            animateNumber(productsSpan, 50000);
+        });
+    </script>
+</body>
+</html>

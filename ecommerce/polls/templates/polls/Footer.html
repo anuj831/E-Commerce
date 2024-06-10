@@ -1,0 +1,172 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  .email-subscription {
+    display: flex;
+    align-items: center;
+}
+
+.email-subscription input[type="email"] {
+    width: 200px; /* Adjust width as needed */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 20%;
+}
+
+.email-subscription button {
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.email-subscription button:hover {
+    background-color: white;
+    color: rgb(35, 164, 214);
+}
+
+.footer {
+    background-image: url('{% static 'img/footer-background.png' %}');
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Center the footer */
+}
+
+.footer-section {
+    flex: 1 1 30%; /* Each section takes 30% of the width */
+    margin-bottom: 20px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.email-subscription {
+    display: flex;
+    align-items: center;
+}
+
+.email-subscription input[type="email"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.email-subscription button {
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.email-subscription button:hover {
+    background-color: #363434;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+}
+</style>
+ <!-- Footer -->
+ <footer class="footer">
+  <div class="footer-container">
+      <div class="footer-section">
+          <h2>Quick Links</h2>
+          <ul>
+              <li><a href="{% url 'index' %}" style="padding-left: 0;">Home</a></li>
+              <li><a href="{% url 'about' %}" style="padding-left: 20px;">About Us</a></li>
+              <li><a href="{% url 'contact' %}" style="padding-left: 27px;">Contact Us</a></li>
+          </ul>
+      </div>
+      
+      <div class="footer-section">
+          <h2>Customer Service</h2>
+          <ul>
+              <li><a href="#" style="padding-left: 0;">My Account</a></li>
+              <li><a href="#" style="padding-left: 10px;">Order History</a></li>
+              <li><a href="#" style="padding-right: 45px;">FAQs</a></li>
+              <li><a href="#" style="padding-right: 22px;">Shipping</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h2>Follow Us</h2>
+          <div class="social-icons">
+              <a href="#" class="facebook"><i class="fa fa-facebook" style="color: white;"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-twitter" style="color: white;"></i></a>
+              <a href="#" class="youtube"><i class="fa fa-youtube-play" style="color: white;"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin" style="color: white;"></i></a>
+              <a href="#" class="whatsapp"><i class="fa fa-whatsapp" style="color: white;"></i></a>
+          </div>
+          <br>
+          <div class="footer-section">
+              <h2>Email Subscription</h2>
+              <form action="#" method="post">
+                  <div class="email-subscription">
+                      <input type="email" name="email" placeholder="Enter your email" required>
+                      <button type="submit">Subscribe</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <!-- Email Subscription Section -->
+      
+  </div>
+  <br>
+  <br>
+  <div class="footer-bottom">
+      <p>&copy; 2024 CIRBRID GREENOGY (I) PRIVATE LIMITED. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+  </div>
+</footer>
+

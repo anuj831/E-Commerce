@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+{% block title %}My Site Admin{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">My Site Admin</a></h1>
+{% endblock %}
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+{% endif %}

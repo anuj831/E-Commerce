@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <style>
+        /* Resetting default browser styles */
+        body, h1, form, input, button, p, a, select, option {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styling registration container */
+        .reg-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(243, 244, 246, 0.15); /* Fallback color if backdrop-filter is not supported */
+            backdrop-filter: blur(10px);
+        }
+
+        /* Styling registration form */
+        .reg-form {
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.15);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Styling user icon */
+        .user-icon {
+            font-size: 3rem; /* Adjust the size of the user icon as needed */
+            margin-bottom: 20px;
+            border: 2px solid #8e928f; /* Border style */
+            border-radius: 50%; /* Rounded border */
+            padding: 10px; /* Padding to give some space around the icon */
+            transition: transform 0.3s ease; /* Transition effect on hover */
+        }
+
+        /* Hover effect on user icon */
+        .user-icon:hover {
+            transform: scale(1.1); /* Scale the icon on hover */
+            border-color: #cbcfcb; /* Change border color on hover */
+        }
+
+        /* Styling form inputs */
+        .reg-input {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: black; /* Ensuring the input text color is black */
+        }
+
+        /* Styling submit button */
+        .reg-button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .reg-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling paragraph */
+        .reg-paragraph {
+            color: black; /* Setting paragraph color to black for better readability */
+            margin-bottom: 20px;
+        }
+
+        /* Styling links */
+        .reg-link {
+            color: #2196F3;
+            text-decoration: none;
+        }
+
+        .reg-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling select dropdown */
+        .reg-dropdown {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: black;
+        }
+
+        /* Styling flag icons in dropdown */
+        .flag-icon {
+            width: 1.5em;
+            height: 1em;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+       <div style="height: 25px; width: 100%; background: rgb(166, 210, 214);"></div>
+    {% include 'polls/header.html' %}
+
+    <div class="reg-container">
+        <div class="reg-form glassmorphism">
+            <i class="fas fa-user user-icon"></i> <!-- User icon -->
+            <h1>Customer Registration</h1>
+            <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+                
+                <select name="country" class="reg-dropdown" required>
+                    <option value="" disabled selected>Select Country</option>
+                    <option value="USA" data-country-code="us"><span class="flag-icon flag-icon-us"></span> United States</option>
+                    <option value="Canada" data-country-code="ca"><span class="flag-icon flag-icon-ca"></span> Canada</option>
+                    <option value="United Kingdom" data-country-code="gb"><span class="flag-icon flag-icon-gb"></span> United Kingdom</option>
+                    <!-- Add more options with country names and country codes -->
+                </select>
+
+                <input type="email" name="email" placeholder="Email" class="reg-input" required>
+                <input type="password" name="password1" placeholder="Password" class="reg-input" required>
+                <input type="password" name="password2" placeholder="Confirm Password" class="reg-input" required>
+                <input type="text" name="company" placeholder="Company Name" class="reg-input" required>
+                <input type="text" name="first name" placeholder="First Name" class="reg-input" required> 
+                <input type="text" name="last name" placeholder="Last Name" class="reg-input" required>
+                <input type="tel" name="number" placeholder="Mobile No" class="reg-input" required>
+                <button type="submit" class="reg-button">Register</button>
+            </form>
+            <p class="reg-paragraph">Already have an account? <a href="{% url 'login' %}" class="reg-link">Login here</a></p>
+        </div>
+    </div>
+    
+    {% include 'polls/Footer.html' %}
+    <script>
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>

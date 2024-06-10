@@ -1,0 +1,996 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+
+  
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+      href="{% static 'lib/lightbox/css/lightbox.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    
+    <style>
+        
+/*** Spinner Start ***/
+
+
+
+
+ .back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    z-index: 99;
+}
+/*** Spinner End ***/
+
+
+/*** Button Start ***/
+.btn {
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-sm-square {
+    width: 34px;
+    height: 34px;
+}
+
+.btn-md-square {
+    width: 44px;
+    height: 44px;
+}
+
+.btn-lg-square {
+    width: 56px;
+    height: 56px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-md-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+.btn.border-secondary {
+    transition: 0.5s;
+}
+
+.btn.border-secondary:hover {
+    background: var(--bs-secondary) !important;
+    color: var(--bs-white) !important;
+}
+
+/*** Topbar Start ***/
+.fixed-top {
+    transition: 0.5s;
+    background: var(--bs-white);
+    border: 0;
+}
+
+.topbar {
+    padding: 20px;
+    border-radius: 230px 100px;
+}
+
+.topbar .top-info {
+    font-size: 15px;
+    line-height: 0;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.topbar .top-link {
+    font-size: 15px;
+    line-height: 0;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.topbar .top-link a {
+    letter-spacing: 1px;
+}
+
+.topbar .top-link a small:hover {
+    color: var(--bs-secondary) !important;
+    transition: 0.5s;
+}
+
+.topbar .top-link a small:hover i {
+    color: var(--bs-primary) !important;
+}
+/*** Topbar End ***/
+
+/*** Navbar Start ***/
+
+/*** Navbar End ***/
+
+/*** Hero Header ***/
+.hero-header {
+    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url(../img/hero-img.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    background: linear-gradient(rgba(255, 181, 36, 0.7), rgba(255, 181, 36, 0.7));
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    border: 1px solid var(--bs-white);
+    background: var(--bs-primary);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-control-next {
+    margin-right: 20px;
+}
+
+.carousel-control-prev {
+    margin-left: 20px;
+}
+
+.page-header {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/cart-page-header-img.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 992px) {
+    .hero-header,
+    .page-header {
+        margin-top: 152px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-header,
+    .page-header {
+        margin-top: 97px !important;
+    }
+}
+/*** Hero Header end ***/
+
+
+/*** featurs Start ***/
+.featurs .featurs-item .featurs-icon {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.featurs .featurs-item .featurs-icon::after {
+    content: "";
+    width: 35px;
+    height: 35px;
+    background: var(--bs-secondary);
+    position: absolute;
+    bottom: -10px;
+    transform: translate(-50%);
+    transform: rotate(45deg);
+    background: var(--bs-secondary);
+    
+}
+/*** featurs End ***/
+
+
+/*** service Start ***/
+.service .service-item .service-content {
+    position: relative;
+    width: 250px; 
+    height: 130px; 
+    top: -50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+/*** service End ***/
+
+
+/*** Fruits Start ***/
+.fruite .tab-class .nav-item a.active {
+    background: var(--bs-secondary) !important;
+}
+
+.fruite .tab-class .nav-item a.active span {
+    color: var(--bs-white) !important; 
+}
+
+.fruite .fruite-categorie .fruite-name {
+    line-height: 40px;
+}
+
+.fruite .fruite-categorie .fruite-name a {
+    transition: 0.5s;
+}
+
+.fruite .fruite-categorie .fruite-name a:hover {
+    color: var(--bs-secondary);
+}
+
+.fruite .fruite-item {
+    height: 100%;
+    transition: 0.5s;
+}
+.fruite .fruite-item:hover {
+    box-shadow: 0 0 55px rgba(0, 0, 0, 0.4);
+}
+
+.fruite .fruite-item .fruite-img {
+    overflow: hidden;
+    transition: 0.5s;
+    border-radius: 10px 10px 0 0;
+}
+
+.fruite .fruite-item .fruite-img img {
+    transition: 0.5s;
+}
+
+.fruite .fruite-item .fruite-img img:hover {
+    transform: scale(1.3);
+}
+/*** Fruits End ***/
+
+
+/*** vesitable Start ***/
+.vesitable .vesitable-item {
+    height: 100%;
+    transition: 0.5s;
+}
+
+.vesitable .vesitable-item:hover {
+    box-shadow: 0 0 55px rgba(0, 0, 0, 0.4);
+}
+
+.vesitable .vesitable-item .vesitable-img {
+    overflow: hidden;
+    transition: 0.5s;
+    border-radius: 10px 10px 0 0;
+}
+
+.vesitable .vesitable-item .vesitable-img img {
+    transition: 0.5s;
+}
+
+.vesitable .vesitable-item .vesitable-img img:hover {
+    transform: scale(1.2);
+}
+
+.vesitable .owl-stage {
+    margin: 50px 0;
+    position: relative;
+}
+
+.vesitable .owl-nav .owl-prev {
+    position: absolute;
+    top: -8px;
+    right: 0;
+    color: var(--bs-primary);
+    padding: 5px 25px;
+    border: 1px solid var(--bs-secondary);
+    border-radius: 20px;
+    transition: 0.5s;
+
+}
+
+.vesitable .owl-nav .owl-prev:hover {
+    background: var(--bs-secondary);
+    color: var(--bs-white);
+}
+
+.vesitable .owl-nav .owl-next {
+    position: absolute;
+    top: -8px;
+    right: 88px;
+    color: var(--bs-primary);
+    padding: 5px 25px;
+    border: 1px solid var(--bs-secondary);
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.vesitable .owl-nav .owl-next:hover {
+    background: var(--bs-secondary);
+    color: var(--bs-white);
+}
+/*** vesitable End ***/
+
+
+/*** Banner Section Start ***/
+.banner .banner-btn:hover {
+    background: var(--bs-primary);
+}
+/*** Banner Section End ***/
+
+
+/*** Facts Start ***/
+.counter {
+    height: 100%;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.counter i {
+    font-size: 60px;
+    margin-bottom: 25px;
+}
+
+.counter h4 {
+    color: var(--bs-primary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.counter h1 {
+    margin-bottom: 0;
+}
+/*** Facts End ***/
+
+
+/*** testimonial Start ***/
+.testimonial .owl-nav .owl-prev {
+    position: absolute;
+    top: -58px;
+    right: 0;
+    color: var(--bs-primary);
+    padding: 5px 25px;
+    border: 1px solid var(--bs-secondary);
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.testimonial .owl-nav .owl-prev:hover {
+    background: var(--bs-secondary);
+    color: var(--bs-white);
+}
+
+.testimonial .owl-nav .owl-next {
+    position: absolute;
+    top: -58px;
+    right: 88px;
+    color: var(--bs-primary);
+    padding: 5px 25px;
+    border: 1px solid var(--bs-secondary);
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.testimonial .owl-nav .owl-next:hover {
+    background: var(--bs-secondary);
+    color: var(--bs-white);
+}
+/*** testimonial End ***/
+
+
+/*** Single Page Start ***/
+.pagination {
+    display: inline-block;
+}
+  
+.pagination a {
+    color: var(--bs-dark);
+    padding: 10px 16px;
+    text-decoration: none;
+    transition: 0.5s;
+    border: 1px solid var(--bs-secondary);
+    margin: 0 4px;
+}
+  
+.pagination a.active {
+    background-color: var(--bs-primary);
+    color: var(--bs-light);
+    border: 1px solid var(--bs-secondary);
+}
+  
+.pagination a:hover:not(.active) {background-color: var(--bs-primary)}
+
+.nav.nav-tabs .nav-link.active {
+    border-bottom: 2px solid var(--bs-secondary) !important;
+}
+/*** Single Page End ***/
+
+
+/*** Footer Start ***/
+.footer .footer-item .btn-link {
+    line-height: 35px;
+    color: rgba(255, 255, 255, .5);
+    transition: 0.5s;
+}
+
+.footer .footer-item .btn-link:hover {
+    color: var(--bs-secondary) !important;
+}
+
+.footer .footer-item p.mb-4 {
+    line-height: 35px;
+}
+/*** Footer End ***/
+.bg-secondary {
+    background-color: #0883c1 !important;
+}
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Featurs Section Start -->
+    <div class="container-fluid featurs py-5">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" style="background:rgb(247, 239, 239)  ">
+            <div class="featurs-item text-center rounded bg-light p-4">
+              <div
+                class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto"
+              >
+                <i class="fas fa-car-side fa-3x text-white"></i>
+              </div>
+              <div class="featurs-content text-center">
+                <h5>Free Shipping</h5>
+                <p class="mb-0">Free on order over $300</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" style="background:rgb(247, 239, 239)  ">
+            <div class="featurs-item text-center rounded bg-light p-4">
+              <div
+                class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto"  >
+                <i class="fas fa-user-shield fa-3x text-white" ></i>
+              </div>
+              <div class="featurs-content text-center">
+                <h5>Security Payment</h5>
+                <p class="mb-0">100% security payment</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" style="background:rgb(247, 239, 239)  ">
+            <div class="featurs-item text-center rounded bg-light p-4">
+              <div
+                class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto"
+              >
+                <i class="fas fa-exchange-alt fa-3x text-white"></i>
+              </div>
+              <div class="featurs-content text-center">
+                <h5>30 Day Return</h5>
+                <p class="mb-0">30 day money guarantee</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" style="background:rgb(247, 239, 239) ">
+            <div class="featurs-item text-center rounded bg-light p-4">
+              <div
+                class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto"
+              >
+                <i class="fa fa-phone fa-3x text-white"></i>
+              </div>
+              <div class="featurs-content text-center">
+                <h5>24/7 Support</h5>
+                <p class="mb-0">Support every time fast</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- Featurs Section End -->
+    
+    <!-- Vesitable Shop Start-->
+    <div class="container-fluid vesitable py-5">
+      <div class="container py-5">
+        <h1 class="mb-0">Our Newest Product</h1>
+        <div class="owl-carousel vegetable-carousel justify-content-center">
+          <div
+            class="border border-primary rounded position-relative vesitable-item"
+          >
+            <div class="vesitable-img">
+              <img
+                src="{% static 'img/bottle.jpg' %}"
+                class="img-fluid w-100 rounded-top"
+                alt=""
+              />
+            </div>
+            <div
+              class="text-white bg-primary px-3 py-1 rounded position-absolute"
+              style="top: 10px; right: 10px;"
+            >
+              Category-1
+            </div>
+            <div class="p-4 rounded-bottom">
+              <h4>Product Name</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                eiusmod te incididunt
+              </p>
+              <div class="d-flex justify-content-between flex-lg-wrap">
+                <p class="text-dark fs-5 fw-bold mb-0">Rs4.99</p>
+                <a
+                  href="{% url 'gallery' %}"
+                  class="btn border border-secondary rounded-pill px-3 text-primary"
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                  cart</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-primary rounded position-relative vesitable-item"
+          >
+            <div class="vesitable-img">
+              <img
+                src="{% static 'img/bottle.jpg' %}"
+                class="img-fluid w-100 rounded-top"
+                alt=""
+              />
+            </div>
+            <div
+              class="text-white bg-primary px-3 py-1 rounded position-absolute"
+              style="top: 10px; right: 10px;"
+            >
+            Category-2
+            </div>
+            <div class="p-4 rounded-bottom">
+              <h4>Product Name</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                eiusmod te incididunt
+              </p>
+              <div class="d-flex justify-content-between flex-lg-wrap">
+                <p class="text-dark fs-5 fw-bold mb-0">Rs4.99</p>
+                <a
+                  href="{% url 'gallery' %}"
+                  class="btn border border-secondary rounded-pill px-3 text-primary"
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                  cart</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-primary rounded position-relative vesitable-item"
+          >
+            <div class="vesitable-img">
+              <img
+                src="{% static 'img/bottle.jpg' %}"
+                class="img-fluid w-100 rounded-top bg-light"
+                alt=""
+              />
+            </div>
+            <div
+              class="text-white bg-primary px-3 py-1 rounded position-absolute"
+              style="top: 10px; right: 10px;"
+            >
+              Category-3
+            </div>
+            <div class="p-4 rounded-bottom">
+              <h4>Product Name</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                eiusmod te incididunt
+              </p>
+              <div class="d-flex justify-content-between flex-lg-wrap">
+                <p class="text-dark fs-5 fw-bold mb-0">Rs7.99</p>
+                <a
+                  href="#"
+                  class="btn border border-secondary rounded-pill px-3 text-primary"
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                  cart</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-primary rounded position-relative vesitable-item"
+          >
+            <div class="vesitable-img">
+              <img
+                src="{% static 'img/bottle.jpg' %}"
+                class="img-fluid w-100 rounded-top"
+                alt=""
+              />
+            </div>
+            <div
+              class="text-white bg-primary px-3 py-1 rounded position-absolute"
+              style="top: 10px; right: 10px;"
+            >
+              Category-4
+            </div>
+            <div class="p-4 rounded-bottom">
+              <h4>Product Name</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                eiusmod te incididunt
+              </p>
+              <div class="d-flex justify-content-between flex-lg-wrap">
+                <p class="text-dark fs-5 fw-bold mb-0">Rs7.99 </p>
+                <a
+                  href="#"
+                  class="btn border border-secondary rounded-pill px-3 text-primary"
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                  cart</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-primary rounded position-relative vesitable-item"
+          >
+            <div class="vesitable-img">
+              <img
+                src="{% static 'img/bottle.jpg' %}"
+                class="img-fluid w-100 rounded-top"
+                alt=""
+              />
+            </div>
+            <div
+              class="text-white bg-primary px-3 py-1 rounded position-absolute"
+              style="top: 10px; right: 10px;"
+            >
+              Category-5
+            </div>
+            <div class="p-4 rounded-bottom">
+              <h4>Product Name</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                eiusmod te incididunt
+              </p>
+              <div class="d-flex justify-content-between flex-lg-wrap">
+                <p class="text-dark fs-5 fw-bold mb-0">Rs7.99</p>
+                <a
+                  href="{% url 'gallery' %}"
+                  class="btn border border-secondary rounded-pill px-3 text-primary"
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                  cart</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-primary rounded position-relative vesitable-item"
+          >
+            <div class="vesitable-img">
+              <img
+                src="{% static 'img/bottle.jpg' %}"
+                class="img-fluid w-100 rounded-top"
+                alt=""
+              />
+            </div>
+            <div
+              class="text-white bg-primary px-3 py-1 rounded position-absolute"
+              style="top: 10px; right: 10px;"
+            >
+              Category-6
+            </div>
+            <div class="p-4 rounded-bottom">
+              <h4>Product Name</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                eiusmod te incididunt
+              </p>
+              <div class="d-flex justify-content-between flex-lg-wrap">
+                <p class="text-dark fs-5 fw-bold mb-0">$7.99</p>
+                <a
+                  href="{% url 'gallery' %}"
+                  class="btn border border-secondary rounded-pill px-3 text-primary"
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                  cart</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-primary rounded position-relative vesitable-item"
+          >
+            <div class="vesitable-img">
+              <img
+                src="{% static 'img/bottle.jpg' %}"
+                class="img-fluid w-100 rounded-top"
+                alt=""
+              />
+            </div>
+            <div
+              class="text-white bg-primary px-3 py-1 rounded position-absolute"
+              style="top: 10px; right: 10px;"
+            >
+              Category-8
+            </div>
+            <div class="p-4 rounded-bottom">
+              <h4>Product Name</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                eiusmod te incididunt
+              </p>
+              <div class="d-flex justify-content-between flex-lg-wrap">
+                <p class="text-dark fs-5 fw-bold mb-0">Rs7.99 </p>
+                <a
+                  href="{% url 'gallery' %}"
+                  class="btn border border-secondary rounded-pill px-3 text-primary"
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                  cart</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-primary rounded position-relative vesitable-item"
+          >
+            <div class="vesitable-img">
+              <img
+                src="{% static 'img/bottle.jpg' %}"
+                class="img-fluid w-100 rounded-top"
+                alt=""
+              />
+            </div>
+            <div
+              class="text-white bg-primary px-3 py-1 rounded position-absolute"
+              style="top: 10px; right: 10px;"
+            >
+              Category-9
+            </div>
+            <div class="p-4 rounded-bottom">
+              <h4>Product Name</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                eiusmod te incididunt
+              </p>
+              <div class="d-flex justify-content-between flex-lg-wrap">
+                <p class="text-dark fs-5 fw-bold mb-0">Rs7.99 </p>
+                <a
+                  href="{% url 'gallery' %}"
+                  class="btn border border-secondary rounded-pill px-3 text-primary"
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                  cart</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fact Start -->
+      <!-- <div class="container-fluid py-5">
+        <div class="container">
+          <div class="bg-light p-5 rounded">
+            <div class="row g-4 justify-content-center">
+              <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="counter bg-white rounded p-5">
+                  <i class="fa fa-users text-secondary"></i>
+                  <h4>satisfied customers</h4>
+                  <h1>1963</h1>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="counter bg-white rounded p-5">
+                  <i class="fa fa-users text-secondary"></i>
+                  <h4>quality of service</h4>
+                  <h1>99%</h1>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="counter bg-white rounded p-5">
+                  <i class="fa fa-users text-secondary"></i>
+                  <h4>quality certificates</h4>
+                  <h1>33</h1>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="counter bg-white rounded p-5">
+                  <i class="fa fa-users text-secondary"></i>
+                  <h4>Available Products</h4>
+                  <h1>789</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- Fact Start -->
+
+      <!-- Tastimonial Start -->
+      <div class="container-fluid testimonial py-5">
+        <div class="container py-5">
+          <div class="testimonial-header text-center">
+            <h4 class="text-primary">Our Testimonial</h4>
+            <h1 class="display-5 mb-5 text-dark">Our Client Saying!</h1>
+          </div>
+          <div class="owl-carousel testimonial-carousel">
+            <div
+              class="testimonial-item img-border-radius bg-light rounded p-4"
+            >
+              <div class="position-relative">
+                <i
+                  class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                  style="bottom: 30px; right: 0;"
+                ></i>
+                <div class="mb-4 pb-4 border-bottom border-secondary">
+                  <p class="mb-0">
+                    Lorem Ipsum is simply dummy text of the printing Ipsum has
+                    been the industry's standard dummy text ever since the
+                    1500s,
+                  </p>
+                </div>
+                <div class="d-flex align-items-center flex-nowrap">
+                  <div class="bg-secondary rounded">
+                    <img
+                      src="{% static 'img/testimonial-1.jpg' %}"
+                      class="img-fluid rounded"
+                      style="width: 100px; height: 100px;"
+                      alt=""
+                    />
+                  </div>
+                  <div class="ms-4 d-block">
+                    <h4 class="text-dark">Client Name</h4>
+                    <p class="m-0 pb-3">Profession</p>
+                    <div class="d-flex pe-5">
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="testimonial-item img-border-radius bg-light rounded p-4"
+            >
+              <div class="position-relative">
+                <i
+                  class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                  style="bottom: 30px; right: 0;"
+                ></i>
+                <div class="mb-4 pb-4 border-bottom border-secondary">
+                  <p class="mb-0">
+                    Lorem Ipsum is simply dummy text of the printing Ipsum has
+                    been the industry's standard dummy text ever since the
+                    1500s,
+                  </p>
+                </div>
+                <div class="d-flex align-items-center flex-nowrap">
+                  <div class="bg-secondary rounded">
+                    <img
+                      src="{% static 'img/testimonial-1.jpg' %}"
+                      class="img-fluid rounded"
+                      style="width: 100px; height: 100px;"
+                      alt=""
+                    />
+                  </div>
+                  <div class="ms-4 d-block">
+                    <h4 class="text-dark">Client Name</h4>
+                    <p class="m-0 pb-3">Profession</p>
+                    <div class="d-flex pe-5">
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="testimonial-item img-border-radius bg-light rounded p-4"
+            >
+              <div class="position-relative">
+                <i
+                  class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                  style="bottom: 30px; right: 0;"
+                ></i>
+                <div class="mb-4 pb-4 border-bottom border-secondary">
+                  <p class="mb-0">
+                    Lorem Ipsum is simply dummy text of the printing Ipsum has
+                    been the industry's standard dummy text ever since the
+                    1500s,
+                  </p>
+                </div>
+                <div class="d-flex align-items-center flex-nowrap">
+                  <div class="bg-secondary rounded">
+                    <img
+                      src="{% static 'img/testimonial-1.jpg' %}"
+                      class="img-fluid rounded"
+                      style="width: 100px; height: 100px;"
+                      alt=""
+                    />
+                  </div>
+                  <div class="ms-4 d-block">
+                    <h4 class="text-dark">Client Name</h4>
+                    <p class="m-0 pb-3">Profession</p>
+                    <div class="d-flex pe-5">
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star text-primary"></i>
+                      <i class="fas fa-star text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tastimonial End -->
+
+      <!-- Back to Top -->
+      <a
+        href="#"
+        class="btn btn-primary border-3 border-primary rounded-circle back-to-top"
+        ><i class="fa fa-arrow-up"></i
+      ></a>
+
+      <!-- JavaScript Libraries -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+      <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+      <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+      <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+      <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+      <!-- Template Javascript -->
+      <script src="{% static 'js/main.js' %}"></script>
+    </div>
+  </body>
+</html>
